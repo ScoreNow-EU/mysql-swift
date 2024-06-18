@@ -2,9 +2,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "MySQL",
+    name: "MySQLSwift",
     products: [
-        .library(name: "MySQL", targets: ["MySQL"]),
+        .library(name: "MySQLSwift", targets: ["MySQLSwift"]),
     ],
     dependencies: [
         .package(url: "https://github.com/novi/cmysql.git", from: "2.0.0"),
@@ -15,12 +15,12 @@ let package = Package(
             dependencies: []
         ),
         .target(
-            name: "MySQL",
-            dependencies: ["SQLFormatter", "cmysql"]
+            name: "MySQLSwift",
+            dependencies: ["SQLFormatter", "CMySQL"]
         ),
         .testTarget(
-            name: "MySQLTests",
-            dependencies: ["MySQL"]
+            name: "MySQLSwiftTests",
+            dependencies: ["MySQLSwift"]
         ),
         .testTarget(
             name: "SQLFormatterTests",
